@@ -1,0 +1,17 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Articulos</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<h2>Articulos</h2>
+	<ion-list>
+		<button ion-item *ngFor="let articulo of articulos" (click)="verArticulo(articulo.id)">
+			{{articulo.titulo}}
+		</button>
+	</ion-list>
+</ion-content>

@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>verArticulo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-card>
+	
+	  <ion-card-header>
+	    {{articulo.titulo}}
+	  </ion-card-header>
+	
+	  <ion-card-content>
+	    {{articulo.contenido}}
+	  </ion-card-content>
+	
+	</ion-card>
+
+	<button ion-button full color="Danger" (click)="eliminarArticulo()">Eliminar Articulo</button>
+	<button ion-button full color="Dark" (click)="irA('EditarArticuloPage')">Editar Articulo</button>
+</ion-content>

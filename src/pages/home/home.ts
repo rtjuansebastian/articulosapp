@@ -7,12 +7,23 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController) {
+	login:boolean;
 
+  constructor(public navCtrl: NavController) {
+  	if(localStorage.getItem("SessionToken")){
+  		this.login=true;
+  	}else{
+  		this.login=false;
+  	}
   }
 
   irA(pagina){
   	this.navCtrl.push(pagina);
+  }
+
+  cerrarSesion(){
+  	localStorage.removeItem("SessionToken");
+  	this.login=false;
   }
 
 }

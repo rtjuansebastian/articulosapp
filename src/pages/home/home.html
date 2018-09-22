@@ -5,7 +5,9 @@
 </ion-header>
 
 <ion-content padding>
-  <button ion-button full (click)="irA('IniciarSesionPage')">Iniciar Sesión
+  <button *ngIf="login==false" ion-button full (click)="irA('IniciarSesionPage')">Iniciar Sesión
   </button>
-  <button ion-button full (click)="irA('CrearCuentaPage')" color="secondary">Crear cuenta</button>
+  <button *ngIf="login==false" ion-button full (click)="irA('CrearCuentaPage')" color="secondary">Crear cuenta</button>
+  <button *ngIf="login" ion-button full color="warning" (click)="irA('TraerArticulosPage')">Articulos</button>
+  <button *ngIf="login"ion-button full (click)="cerrarSesion()" color="danger">Cerrar Sesiòn</button>
 </ion-content>
