@@ -1,0 +1,43 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>crearCuenta</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>
+				Nombre
+			</ion-label>
+			<ion-input type="text" name="name" [(ngModel)]="formulario.user.name" ></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>
+				Correo Electronico
+			</ion-label>
+			<ion-input type="email" name="email" [(ngModel)]="formulario.user.email" ></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>
+				Contraseña
+			</ion-label>
+			<ion-input type="password" name="password" [(ngModel)]="formulario.user.password" ></ion-input>
+		</ion-item>
+
+		<ion-item>
+			<ion-label>
+				Confirmar contraseña
+			</ion-label>
+			<ion-input type="password" name="password_confirmation" [(ngModel)]="formulario.user.password_confirmation" ></ion-input>
+		</ion-item>
+
+	</ion-list>
+
+	<button ion-button full (click)="crearCuenta()">Crear cuenta</button>
+</ion-content>

@@ -11,4 +11,8 @@ export class HomePage {
 
   }
 
+  irA(pagina){
+  	this.navCtrl.push(pagina);
+  }
+
 }

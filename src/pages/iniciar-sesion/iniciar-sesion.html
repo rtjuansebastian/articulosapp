@@ -1,0 +1,25 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Iniciar Sesion</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>Correo Electronico</ion-label>
+			<ion-input type="email" name="email" [(ngModel)]="formulario.auth.email"></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>
+				Contraseña
+			</ion-label>
+			<ion-input type="password" name="password" [(ngModel)]="formulario.auth.password"></ion-input>
+		</ion-item>
+
+	</ion-list>
+	<button ion-button full (click)="iniciarSesion()">Iniciar Sesión</button>
+</ion-content>
