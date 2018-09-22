@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>editarArticulo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>
+				Titulo
+			</ion-label>
+			<ion-input type="text" name="titulo" [(ngModel)]="articulo.titulo" ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>
+				Contenido
+			</ion-label>
+			<ion-textarea name="contenido" [(ngModel)]="articulo.contenido"></ion-textarea>
+		</ion-item>
+	</ion-list>
+	<button ion-button full (click)="editarArticulo()">Editar</button>
+</ion-content>

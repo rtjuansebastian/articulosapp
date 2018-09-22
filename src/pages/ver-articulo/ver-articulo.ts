@@ -36,13 +36,32 @@ export class VerArticuloPage {
   	}
 
   	eliminarArticulo(){
-  		let alerta= 
-  		this.articulosServicio.
-  			eliminarArticulo(this.idArticulo).
-  			subscribe(respuesta=>{
-  				this.navCtrl.setRoot(TraerArticulosPage);
-  				this.navCtrl.popToRoot();
-  			},error=>{});
+  		let alerta= this.alertCtrl.create({
+  			title:"Estas seguro?",
+  			subTitle:"Quierers eliminar el articulo?",
+  			buttons:[
+  			{
+  				text:"Cancelar",
+  				handler:data=>{
+
+  				}
+  			},{
+  				text:"Eliminar",
+  				handler:data=>{
+  					this.articulosServicio.
+		  			eliminarArticulo(this.idArticulo).
+		  			subscribe(respuesta=>{
+		  				this.navCtrl.setRoot(TraerArticulosPage);
+		  				this.navCtrl.popToRoot();
+		  			},error=>{});
+  				}
+  			}]
+  		});
+  		alerta.present();
+  	}
+
+  	irA(pagina){
+  		this.navCtrl.push(pagina,{id:this.idArticulo});
   	}
 
 }
