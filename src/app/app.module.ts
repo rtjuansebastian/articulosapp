@@ -9,6 +9,7 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import {VerArticuloPage} from '../pages/ver-articulo/ver-articulo';
+import {VerArticuloPageModule} from '../pages/ver-articulo/ver-articulo.module';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -22,12 +23,13 @@ import { ArticulosProvider } from '../providers/articulos/articulos';
     ContactPage,
     HomePage,
     TabsPage,
-    VerArticuloPage
+    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    VerArticuloPageModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
