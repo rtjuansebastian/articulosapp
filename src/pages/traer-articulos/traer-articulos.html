@@ -8,6 +8,7 @@
 
 
 <ion-content padding>
+	<button ion-button full color="secondary" (click)="irA('CrearArticuloPage')">Crear articulor</button>
 	<h2>Articulos</h2>
 	<ion-list>
 		<button ion-item *ngFor="let articulo of articulos" (click)="verArticulo(articulo.id)">

@@ -1,5 +1,6 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { AlertController } from 'ionic-angular';
 import { Observable } from 'rxjs';
 /*
   Generated class for the UsuariosProvider provider.
@@ -13,7 +14,10 @@ export class UsuariosProvider {
 	private url:string;
 	private encabezados:any;
 
-  	constructor(private http:HttpClient) { 
+  	constructor(
+      private http:HttpClient,
+      private alertCtrl:AlertController
+      ) { 
   		this.url="http://apidocumentospiensadigital.herokuapp.com/";
   		this.encabezados={
   			headers: new HttpHeaders({
@@ -34,6 +38,21 @@ export class UsuariosProvider {
       let parametros=JSON.stringify(usuario);
       return this.http.
         post<any>(urlCrearCuenta,parametros,this.encabezados);
+    }
+
+    validarSesion():boolean{
+      if (localStorage.getItem("SessionToken")) {
+        return true;
+      }else{
+        let alerta=this.alertCtrl.create({
+          title:"Necesitas iniciar Sesión",
+          subTitle:"",
+          buttons:['Ok']
+        });
+
+        alerta.present();
+        return false;
+      } 
     }
 
 }

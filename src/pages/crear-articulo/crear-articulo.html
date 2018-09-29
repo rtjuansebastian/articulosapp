@@ -1,0 +1,32 @@
+<!--
+  Generated template for the CrearArticuloPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>crearArticulo</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+	<ion-list>
+		<ion-item>
+			<ion-label>
+				Titulo
+			</ion-label>
+			<ion-input type="text" name="titulo" [(ngModel)]="articulo.titulo" ></ion-input>
+		</ion-item>
+		<ion-item>
+			<ion-label>
+				Contenido
+			</ion-label>
+			<ion-textarea name="contenido" [(ngModel)]="articulo.contenido"></ion-textarea>
+		</ion-item>
+	</ion-list>
+	<button ion-button full color="secondary" (click)="crearArticulo()">Crear Articulo</button>
+</ion-content>

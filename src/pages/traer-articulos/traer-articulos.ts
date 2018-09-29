@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { ArticulosProvider } from '../../providers/articulos/articulos';
+import { UsuariosProvider } from '../../providers/usuarios/usuarios';
 
 @IonicPage()
 @Component({
@@ -15,12 +16,17 @@ export class TraerArticulosPage {
 	  	public navCtrl: NavController, 
 	  	public navParams: NavParams,
 	  	private articulosServicio: ArticulosProvider,
-	  	public alertCtrl: AlertController
+	  	public alertCtrl: AlertController,
+	  	private usuarios:UsuariosProvider
 	  	) {
 
 	  	this.articulos=[
 	  		{titulo:"",contenido:""}
 	  	]
+	}
+
+	ionViewCanEnter(){
+		return this.usuarios.validarSesion();
 	}
 
 	ionViewDidLoad() {
@@ -34,11 +40,17 @@ export class TraerArticulosPage {
 	    			subTitle:"No se pudieron obtener los datos",
 	    			buttons:['Ok']
 	    		});
+
+	    		alerta.present();
 	    	});
 	}
 
 	verArticulo(id){
 		this.navCtrl.push('VerArticuloPage',{id:id})
+	}
+
+	irA(pagina){
+		this.navCtrl.push(pagina);
 	}
 
 }
